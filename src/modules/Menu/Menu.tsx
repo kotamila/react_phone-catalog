@@ -24,10 +24,10 @@ export const Menu: React.FC = () => {
           {menuItems.map(item => (
             <li key={item.path}>
               <NavLink
+                to={item.path}
+                end={item.path === '/'}
                 className={({ isActive }) =>
-                  isActive
-                    ? 'header__nav_link header__nav_link--active'
-                    : 'header__nav_link'
+                  `header__nav_link${isActive ? ' header__nav_link--active' : ''}`
                 }
               >
                 {item.title}
@@ -36,6 +36,27 @@ export const Menu: React.FC = () => {
           ))}
         </ul>
       </nav>
+      <div className="header_icons">
+        <NavLink
+          to="/favourites"
+          className={({ isActive }) =>
+            `header__icon-link${isActive ? ' header__icon-link--active' : ''}`
+          }
+          aria-label="Обране"
+        >
+          <img src="/img/icons/Favourites.png" alt="Favourites" />
+        </NavLink>
+
+        <NavLink
+          to="/cart"
+          className={({ isActive }) =>
+            `header__icon-link${isActive ? ' header__icon-link--active' : ''}`
+          }
+          aria-label="Кошик"
+        >
+          <img src="/img/icons/Basket.png" alt="Favourites" />
+        </NavLink>
+      </div>
     </header>
   );
 };
