@@ -1,23 +1,22 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.scss';
-import './modules/Layout/Layout';
-import './pages/HomePages/HomePage';
-import './modules/Menu/Menu';
-import { HomePage } from './pages/HomePages/HomePage';
-import { CartPage } from './pages/CartPage';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Menu } from './modules/Menu/Menu';
+import { HomePage } from './pages/HomePages';
 import { FavouritesPage } from './pages/FavouritesPage';
-import { Layout } from './modules/Layout/Layout';
+import { CartPage } from './pages/CartPage';
 
-export const App = () => (
-  <div className="App">
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="cart" element={<CartPage />} />
-          <Route path="favourites" element={<FavouritesPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </div>
-);
+export const App: React.FC = () => {
+  return (
+    <div className="app">
+      <Menu />
+
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/favourites" element={<FavouritesPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </main>
+    </div>
+  );
+};
