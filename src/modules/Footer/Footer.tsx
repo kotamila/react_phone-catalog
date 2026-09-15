@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
                 to={item.path}
                 end={item.path === '/'}
                 className={({ isActive }) =>
-                  `footer__nav_link${isActive ? ' footer__nav_link--active' : ''}`
+                  `footer__nav-link${isActive ? ' footer__nav-link--active' : ''}`
                 }
               >
                 {item.title}
