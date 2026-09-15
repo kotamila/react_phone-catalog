@@ -33,7 +33,7 @@ export const Menu: React.FC = () => {
         onClick={closeMenu}
         aria-label="Головна сторінка"
       >
-        <img src="/img/Logo.png" alt="NICE GADGETS" />
+        <img src="img/Logo.png" alt="NICE GADGETS" />
       </Link>
 
       <div className={`header__body ${isMenuOpen ? 'header__body--open' : ''}`}>
@@ -65,7 +65,7 @@ export const Menu: React.FC = () => {
             }
             aria-label="Обране"
           >
-            <img src="/img/icons/Favourites.png" alt="Favourites" />
+            <img src="img/icons/Favourites.png" alt="Favourites" />
           </NavLink>
 
           <NavLink
@@ -76,7 +76,7 @@ export const Menu: React.FC = () => {
             }
             aria-label="Кошик"
           >
-            <img src="/img/icons/Basket.png" alt="Cart" />
+            <img src="img/icons/Basket.png" alt="Cart" />
           </NavLink>
         </div>
       </div>
@@ -88,7 +88,7 @@ export const Menu: React.FC = () => {
         aria-label={isMenuOpen ? 'Закрити меню' : 'Відкрити меню'}
       >
         <img
-          src={isMenuOpen ? '/img/icons/Close.png' : '/img/icons/Menu.png'}
+          src={isMenuOpen ? 'img/icons/Close.png' : 'img/icons/Menu.png'}
           alt="Menu toggle"
         />
       </button>
